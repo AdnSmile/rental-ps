@@ -1,9 +1,20 @@
-import { Button } from "@material-tailwind/react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
-export default function Example() {
+import Login from "./page/Login";
+import Rental from "./page/customer/Rental";
+
+export default function App() {
+  const helmetContext = {};
   return (
-    <div className="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
-      <Button>Button</Button>
-    </div>
+    <BrowserRouter>
+      <HelmetProvider context={helmetContext}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/rental" element={<Rental />} />
+        </Routes>
+      </HelmetProvider>
+    </BrowserRouter>
   );
 }
