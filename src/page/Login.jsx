@@ -1,81 +1,92 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import React from "react";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+  CardHeader,
+  Input,
+  ButtonGroup,
+} from "@material-tailwind/react";
 
-import { Button } from "@material-tailwind/react";
+import bg_ps from "../assets/img/bg_ps.jpg";
+import { Link } from "react-router-dom";
+import "./Login.css";
 
-export default function Login() {
-  const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const onLogin = () => {
-    axios
-      .post("/login", {
-        username: username,
-        password: password,
-      })
-      .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        navigate("/rental");
-      })
-      .catch((err) => {
-        alert(err.response.data.message);
-      });
-  };
-
+function Login() {
   return (
-    <>
-      <div className="h-dvh flex justify-center items-center">
-        <div className="relative flex flex-col items-center justify-center py-8 w-full">
-          <h1 className="text-4xl font-bold text-black">Rental PS</h1>
-          <div className="w-96 mt-4">
-            <div className="mt-8">
-              <p className="text-left">Username</p>
-              <input
-                type="text"
-                size="lg"
-                className="w-full mt-2 px-4 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-lg border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow border-black border-2"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-
-            <div className="mt-8">
-              <p className="text-left">Password</p>
-              <input
-                type="text"
-                size="lg"
-                className="w-full mt-2 px-4 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-lg border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow border-black border-2"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className="mt-4 items-start justify-start flex">
-              <p className="mr-1">Dont have an account? </p>
-              <Link to="/register" className=" text-blue-500">
-                Register
-              </Link>
-              <p className="ml-1">here </p>
-            </div>
-            <div className=" items-start justify-start flex">
-              <Button
-                color="black"
-                size="md"
-                className="mt-4"
-                onClick={() => {
-                  onLogin();
-                }}
-              >
+    <div className="flex h-dvh items-center justify-center bg-[#0F122E]">
+      <div className="wrapper">
+        <div className="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <Card
+        className="relative z-10 h-[70vh] w-[70vw] rounded-xl shadow-box-cyan"
+        color="transparent"
+      >
+        <CardBody className="m-0 flex h-full w-full justify-between overflow-hidden p-0">
+          <div className="h-full w-full flex-1">
+            <img
+              src={bg_ps}
+              alt=""
+              className="h-full w-full rounded-s-xl object-cover"
+            />
+          </div>
+          <div className="flex-1 rounded-e-xl bg-white">
+            <div className="p-20">
+              <h1 className="text-center text-6xl font-semibold tracking-wide text-blue-500">
+                Rental PS
+              </h1>
+              <div className="mx-auto mt-16 w-full">
+                <Input
+                  type="email"
+                  size="lg"
+                  placeholder="Email Address"
+                  className="!border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 placeholder:opacity-100 focus:!border-blue-900 focus:ring-blue-100"
+                  labelProps={{
+                    className: "hidden",
+                  }}
+                  containerProps={{ className: "min-w-[100px]" }}
+                />
+              </div>
+              <div className="mx-auto mt-6 w-full">
+                <Input
+                  type="password"
+                  size="lg"
+                  placeholder="Password"
+                  className="!border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 placeholder:opacity-100 focus:!border-blue-900 focus:ring-blue-100"
+                  labelProps={{
+                    className: "hidden",
+                  }}
+                  containerProps={{ className: "min-w-[100px]" }}
+                />
+              </div>
+              <p className="mt-2 text-end text-sm">
+                Dont't have account?{" "}
+                <Link className="text-blue-400">Sign up here</Link>
+              </p>
+              <Button fullWidth="full" className="mt-10 bg-blue-500">
                 Login
               </Button>
             </div>
-            {/* <Link to="/register" className="mt-4 text-blue-500">
-              Register
-            </Link> */}
           </div>
-        </div>
-      </div>
-    </>
+        </CardBody>
+        <CardFooter className="m-0 p-0"></CardFooter>
+      </Card>
+    </div>
   );
 }
+
+export default Login;
