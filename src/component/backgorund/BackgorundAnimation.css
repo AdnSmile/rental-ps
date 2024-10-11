@@ -32,7 +32,7 @@
 }
 .box div:nth-child(5) {
   top: 67%;
-  left: 20%;
+  left: 8%;
   animation: animate 6s linear infinite;
 }
 .box div:nth-child(6) {

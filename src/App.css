@@ -1,0 +1,44 @@
+@font-face {
+  font-family: EmotionEngine;
+  src: url(/font/EmotionEngineBold-YGnL.woff);
+  font-weight: bold;
+}
+@font-face {
+  font-family: EmotionEngine;
+  src: url(/font/EmotionEngine-8ynA.woff);
+}
+@font-face {
+  font-family: EmotionEngine;
+  src: url(/font/EmotionEngineItalic-Mr0v.woff);
+  font-style: italic;
+}
+@font-face {
+  font-family: EmotionEngine;
+  src: url(/font/EmotionEngineBoldItalic-raEK);
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Purple shadow */
+.box-shadow-purple {
+  box-shadow:
+    0 0 20px rgba(255, 0, 255, 0.5),
+    0 0 40px rgba(255, 0, 255, 0.4),
+    0 0 60px rgba(255, 0, 255, 0.3);
+}
+
+/* Cyan shadow */
+.box-shadow-cyan {
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 40px rgba(0, 255, 255, 0.4),
+    0 0 60px rgba(0, 255, 255, 0.3);
+}
+
+/* Lilac shadow */
+.box-shadow-lilac {
+  box-shadow:
+    0 0 20px rgba(200, 162, 200, 0.5),
+    0 0 40px rgba(200, 162, 200, 0.4),
+    0 0 60px rgba(200, 162, 200, 0.3);
+}

@@ -26,7 +26,7 @@ export default function LoginOld() {
 
   return (
     <>
-      <div className="flex h-dvh items-center justify-center bg-[#000000]">
+      <div className="flex h-dvh items-center justify-center">
         <div className="relative flex w-full flex-col items-center justify-center py-8">
           <h1 className="text-4xl font-bold text-black">Rental PS</h1>
           <div className="mt-4 w-96">

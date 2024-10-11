@@ -8,13 +8,16 @@ module.exports = withMT({
     "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Barlow"],
+    },
+
     extend: {
       boxShadow: {
-        "box-purple":
+        purple:
           "0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.4), 0 0 60px rgba(255, 0, 255, 0.3)",
-        "box-cyan":
-          "0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.3)",
-        "box-lilac":
+        cyan: "0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.3)",
+        lilac:
           "0 0 20px rgba(200, 162, 200, 0.5), 0 0 40px rgba(200, 162, 200, 0.4), 0 0 60px rgba(200, 162, 200, 0.3)", // Lilac color shadow
       },
     },
