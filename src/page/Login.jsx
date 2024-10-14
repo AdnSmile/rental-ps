@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, CardBody, Button, Input } from "@material-tailwind/react";
 
 import bg_ps from "../assets/img/bg_ps.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiEye, HiEyeSlash } from "react-icons/hi2";
 import { toast } from "sonner";
 import { apiPublic } from "../utils/ApiService";
 import BackgroundAnimation from "../component/backgorund/BackgroundAnimation";
+import AuthService from "../utils/AuthService";
 
 function Login() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState({
@@ -30,6 +32,11 @@ function Login() {
       .then((res) => {
         toast.success(res.data.message);
         console.log(res.data.message);
+        AuthService.setUser(res.data.data);
+        AuthService.setToken(res.data.data.token);
+        if (res.data.data.role === "Admin") {
+          navigate("/dashboard");
+        }
       })
       .finally(() => {
         setLoading(false);
@@ -107,7 +114,7 @@ function Login() {
                   </div>
                 </div>
                 <p className="mt-2 text-end text-sm">
-                  Dont't have account?{" "}
+                  Don&apos;t have account?{" "}
                   <Link
                     to={"/register"}
                     className="text-blue-400 underline underline-offset-2"

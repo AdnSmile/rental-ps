@@ -8,8 +8,10 @@ import { Toaster } from "sonner";
 
 import Rental from "./page/customer/Rental";
 import Login from "./page/Login";
-import LoginOld from "./page/Login_old";
+// import LoginOld from "./page/Login_old";
 import Register from "./page/Register";
+import Sidebar from "./component/layout_admin/Sidebar";
+import Dashboard from "./page/admin/Dashboard";
 
 export default function App() {
   const helmetContext = {};
@@ -25,6 +27,9 @@ export default function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/rental" element={<Rental />} />
+              <Route element={<Sidebar />}>
+                <Route path="dashboard" element={<Dashboard />} />
+              </Route>
             </Routes>
           </HelmetProvider>
         </Router>
