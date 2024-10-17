@@ -8,10 +8,11 @@ import { Toaster } from "sonner";
 
 import Rental from "./page/customer/Rental";
 import Login from "./page/Login";
-// import LoginOld from "./page/Login_old";
 import Register from "./page/Register";
 import Sidebar from "./component/layout_admin/Sidebar";
 import Dashboard from "./page/admin/Dashboard";
+import KelolaDataPS from "./page/admin/kelola-ps/KelolaDataPS";
+import KelolaMenu from "./page/admin/kelola-makanan/KelolaMenu";
 
 export default function App() {
   const helmetContext = {};
@@ -24,11 +25,15 @@ export default function App() {
         <Router>
           <HelmetProvider context={helmetContext}>
             <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/rental" element={<Rental />} />
+              <Route path="/*" element={<Login />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="rental" element={<Rental />} />
               <Route element={<Sidebar />}>
                 <Route path="dashboard" element={<Dashboard />} />
+                {/* Admin */}
+                <Route path="kelola-ps" element={<KelolaDataPS />} />
+                <Route path="kelola-menu" element={<KelolaMenu />} />
               </Route>
             </Routes>
           </HelmetProvider>

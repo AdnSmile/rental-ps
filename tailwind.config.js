@@ -9,9 +9,14 @@ module.exports = withMT({
   ],
   theme: {
     fontFamily: {
-      sans: ["Barlow"],
+      sans: ["Helvetica"],
     },
-
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "960px",
+      xl: "1140px",
+    },
     extend: {
       boxShadow: {
         purple:

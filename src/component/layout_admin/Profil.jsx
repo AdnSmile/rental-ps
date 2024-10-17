@@ -17,7 +17,7 @@ function Profil() {
         <MenuHandler>
           <div className="flex items-center gap-2 hover:cursor-pointer">
             <div className="flex flex-col items-end">
-              <p className="text-sm">{user.username}</p>
+              <p className="text-sm font-semibold">{user.username}</p>
               <p className="text-sm text-gray-600">{user.role}</p>
             </div>
 

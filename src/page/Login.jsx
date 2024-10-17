@@ -44,23 +44,23 @@ function Login() {
   };
 
   return (
-    <div className="flex h-dvh items-center justify-center bg-[#0F122E]">
+    <div className="mx-auto flex h-dvh items-center justify-center bg-[#0F122E]">
       <BackgroundAnimation />
       <Card
-        className="relative z-10 h-[70vh] w-[70vw] rounded-xl !shadow-cyan"
+        className="relative z-10 mx-8 h-[70vh] w-full rounded-xl !shadow-cyan md:w-[70vw]"
         color="transparent"
       >
         <CardBody className="m-0 flex h-full w-full justify-between p-0">
-          <div className="h-full w-full flex-1">
+          <div className="hidden h-full w-full md:flex md:flex-1">
             <img
               src={bg_ps}
               alt=""
               className="h-full w-full rounded-s-xl object-cover"
             />
           </div>
-          <div className="flex flex-1 items-center rounded-e-xl bg-white">
-            <div className="py-auto my-auto w-full p-20">
-              <h1 className="text-center text-6xl font-bold tracking-wide text-blue-500">
+          <div className="flex flex-1 items-center rounded-xl bg-white md:rounded-none md:rounded-e-xl">
+            <div className="py-auto my-auto w-full p-10 md:p-20">
+              <h1 className="text-center text-3xl font-bold tracking-wide text-blue-500 md:text-6xl">
                 Rental PS
               </h1>
               <form onSubmit={(e) => handleSubmit(e)}>
